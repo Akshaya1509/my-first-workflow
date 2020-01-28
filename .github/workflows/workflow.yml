@@ -1,12 +1,15 @@
-# .github/workflows/workflow.yml
 on: [push]
 
 jobs:
-  build:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-    - uses: Akshaya1509/hello-world-action@master
-      with:
-        who-to-greet: 'Mundo'
+    - name: Hello world action step
       id: hello
-    - run: echo "The time was ${{ steps.hello.outputs.time }}"
+      uses: Akshaya1509/hello-world-action@master
+      with:
+        who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
