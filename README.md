@@ -1,2 +1,2 @@
 # my-first-workflow
-First workflow
+My First workflow
